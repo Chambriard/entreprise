@@ -12,7 +12,7 @@ import javax.ejb.Stateless;
  * @author alban
  */
 @Stateless
-public class gestionEntreprise implements gestionEntrepriseLocal {
+public class GestionEntreprise implements GestionEntrepriseLocal {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")

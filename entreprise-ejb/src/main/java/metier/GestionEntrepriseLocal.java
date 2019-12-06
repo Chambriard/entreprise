@@ -12,6 +12,6 @@ import javax.ejb.Local;
  * @author alban
  */
 @Local
-public interface gestionEntrepriseLocal {
+public interface GestionEntrepriseLocal {
     
 }

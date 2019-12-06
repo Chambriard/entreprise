@@ -22,9 +22,9 @@ import javax.jms.MessageListener;
     ,
         @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue")
 })
-public class ecouteur implements MessageListener {
+public class Ecouteur implements MessageListener {
     
-    public ecouteur() {
+    public Ecouteur() {
     }
     
     @Override
@@ -32,7 +32,7 @@ public class ecouteur implements MessageListener {
         try {
             System.out.println("entreprise : " +message.getBody(String.class));
         } catch (JMSException ex) {
-            Logger.getLogger(ecouteur.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Ecouteur.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
