@@ -4,16 +4,12 @@
  * and open the template in the editor.
  */
 package entities;
-
-import java.util.ArrayList;
-
 /**
  *
  * @author Claire
  */
 public class Entreprise {
     private String codeClient;
-    private ArrayList<String> compteRendus;
 
     public Entreprise(String codeClient) {
         this.codeClient = codeClient;
@@ -27,20 +23,11 @@ public class Entreprise {
         this.codeClient = codeClient;
     }
 
-    public ArrayList<String> getCompteRendus() {
-        return compteRendus;
-    }
-
-    public void setCompteRendus(ArrayList<String> compteRendus) {
-        this.compteRendus = compteRendus;
-    }
 
     @Override
     public String toString() {
-        return "enteprise{" + "codeClient=" + codeClient + ", compteRendus=" + compteRendus + '}';
+        return "enteprise{" + "codeClient=" + codeClient + '}';
     }
-    
-    
     
     
 }

@@ -5,6 +5,8 @@
  */
 package metier;
 
+import entities.CompteRendu;
+import java.util.ArrayList;
 import javax.ejb.Local;
 
 /**
@@ -13,5 +15,7 @@ import javax.ejb.Local;
  */
 @Local
 public interface GestionEntrepriseLocal {
+    public ArrayList<CompteRendu> afficherCR();
+    public void enregistrerCR(CompteRendu cr) ;
     
 }

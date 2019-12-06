@@ -5,6 +5,8 @@
  */
 package services;
 
+import entities.CompteRendu;
+import java.util.ArrayList;
 import javax.ejb.Local;
 
 /**
@@ -12,6 +14,7 @@ import javax.ejb.Local;
  * @author alban
  */
 @Local
-public interface serviceEntrepriseLocal {
+public interface ServiceEntrepriseLocal {
+     public ArrayList<CompteRendu> afficherCR();
     
 }

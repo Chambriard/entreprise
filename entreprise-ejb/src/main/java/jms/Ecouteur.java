@@ -5,13 +5,18 @@
  */
 package jms;
 
+import com.google.gson.Gson;
+import entities.CompteRendu;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.ActivationConfigProperty;
+import javax.ejb.EJB;
 import javax.ejb.MessageDriven;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
+import metier.GestionEntreprise;
+import metier.GestionEntrepriseLocal;
 
 /**
  *
@@ -24,13 +29,22 @@ import javax.jms.MessageListener;
 })
 public class Ecouteur implements MessageListener {
     
+    private Gson gson;
+    
+    @EJB
+    private GestionEntrepriseLocal ge;
+    
     public Ecouteur() {
+        this.gson = new Gson();
+        //this.ge = new GestionEntreprise();
     }
     
     @Override
     public void onMessage(Message message) {
         try {
-            System.out.println("entreprise : " +message.getBody(String.class));
+            String mes = message.getBody(String.class);
+            CompteRendu cr = this.gson.fromJson(mes, CompteRendu.class);
+            this.ge.enregistrerCR(cr);
         } catch (JMSException ex) {
             Logger.getLogger(Ecouteur.class.getName()).log(Level.SEVERE, null, ex);
         }
